@@ -7,6 +7,7 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Threading.Tasks;
+    using System;
 
     public class CustomerRepository : ICustomerRepository
     {
@@ -25,6 +26,11 @@
         public async Task<IList<Customer>> GetAllAsync()
         {
             return await _context.Customers.ToListAsync();
+        }
+
+        public async Task<Customer> GetByIdAsync(string id)
+        {
+            return await _context.Customers.Include(x => x.Orders).FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

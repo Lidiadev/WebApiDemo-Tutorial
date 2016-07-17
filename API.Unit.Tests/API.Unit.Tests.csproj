@@ -126,6 +126,10 @@
       <Project>{EC7B6672-8A50-4175-95D6-BC8D6063EDA6}</Project>
       <Name>Api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{7C1C598F-CC9B-4407-8532-290F2F1FBAD7}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

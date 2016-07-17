@@ -7,5 +7,6 @@
     public interface ICustomerRepository
     {
         Task<IList<Customer>> GetAllAsync();
+        Task<Customer> GetByIdAsync(string id);
     }
 }

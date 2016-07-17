@@ -25,7 +25,7 @@
             _customerReadService = customerReadService;
         }
 
-        // GET api/customer
+        // GET api/v1/customers
         /// <summary>
         /// Get all customers, without orders
         /// </summary>

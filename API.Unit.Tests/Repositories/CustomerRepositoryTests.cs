@@ -3,6 +3,7 @@
     using Core.Entities;
     using Data.Repository;
     using Data.Repository.Interfaces;
+    using Library.Common;
     using NUnit.Framework;
     using Rhino.Mocks;
     using System.Collections.Generic;
@@ -55,6 +56,38 @@
 
             // ASSERT
             Assert.That(result, Is.Empty);
+
+            _context.VerifyAllExpectations();
+        }
+
+        [Test]
+        public async Task GetByIdAsync_CustomerFound_ReturnsCustomer()
+        {
+            // ARRANGE
+            _context.Customers = _customersDbSet;
+            string customerId = _customersDbSet.First().Id;
+
+            // ACT
+            Customer result = await _subject.GetByIdAsync(customerId);
+
+            // ASSERT
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.Id, Is.EqualTo(customerId));
+
+            _context.VerifyAllExpectations();
+        }
+
+        [Test]
+        public async Task GetByIdAsync_CustomerNotFound_ReturnsNull()
+        {
+            // ARRANGE
+            _context.Customers = _customersDbSet;
+
+            // ACT
+            Customer result = await _subject.GetByIdAsync(CommonFunctions.GenerateId());
+
+            // ASSERT
+            Assert.That(result, Is.Null);
 
             _context.VerifyAllExpectations();
         }
