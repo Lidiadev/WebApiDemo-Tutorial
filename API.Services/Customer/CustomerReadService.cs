@@ -7,6 +7,7 @@
     using Data.Repository.Interfaces;
     using Data.Repository;
     using System.Linq;
+    using System;
 
     public class CustomerReadService : ICustomerReadService
     {
@@ -28,6 +29,12 @@
             return customers.Any()
                ? customers.Select(x => new CustomerDto(x)).ToList()
                : new List<CustomerDto>();
+        }
+
+        public async Task<CustomerDetailDto> GetByIdAsync(string id)
+        {
+            var customer = await _customerRepository.GetByIdAsync(id);
+            return customer != null ? new CustomerDetailDto(customer) : null;
         }
     }
 }

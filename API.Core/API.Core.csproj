@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\Customer\CustomerDetailDto.cs" />
     <Compile Include="Dtos\Customer\CustomerDto.cs" />
+    <Compile Include="Dtos\Order\OrderDetailDto.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

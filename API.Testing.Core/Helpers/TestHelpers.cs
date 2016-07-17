@@ -17,6 +17,19 @@
             Fixture.Behaviors.Add(new OmitOnRecursionBehavior());
         }
 
+        public static Customer CreateCustomer()
+        {
+            return Fixture.Build<Customer>()
+                .Create();
+        }
+
+        public static Customer CreateCustomerWithoutOrders()
+        {
+            return Fixture.Build<Customer>()
+                .Without(x => x.Orders)
+                .Create();
+        }
+
         public static IList<Customer> CreateCustomers(int number = 10)
         {
             return Fixture.Build<Customer>()

@@ -7,5 +7,6 @@
     public interface ICustomerReadService
     {
         Task<IList<CustomerDto>> GetAllAsync();
+        Task<CustomerDetailDto> GetByIdAsync(string id);
     }
 }
