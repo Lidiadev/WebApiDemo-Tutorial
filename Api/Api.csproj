@@ -169,7 +169,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer\CustomerDetailModel.cs" />
     <Compile Include="Models\Customer\CustomerModel.cs" />
+    <Compile Include="Models\Error\ErrorEnvelope.cs" />
+    <Compile Include="Models\Error\ErrorModel.cs" />
+    <Compile Include="Models\Order\OrderDetailModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +234,10 @@
     <ProjectReference Include="..\API.Services\API.Services.csproj">
       <Project>{E0C77A75-E97C-40FF-A189-18E1B8F16419}</Project>
       <Name>API.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{7C1C598F-CC9B-4407-8532-290F2F1FBAD7}</Project>
+      <Name>Library</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

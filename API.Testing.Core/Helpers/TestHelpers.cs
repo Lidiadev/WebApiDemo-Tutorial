@@ -1,6 +1,7 @@
 ﻿namespace API.Testing.Core.Helpers
 {
     using API.Core.Dtos.Customer;
+    using API.Core.Dtos.Order;
     using API.Core.Entities;
     using EntityFramework;
     using Ploeh.AutoFixture;
@@ -27,6 +28,19 @@
         {
             return Fixture.Build<Customer>()
                 .Without(x => x.Orders)
+                .Create();
+        }
+
+        public static CustomerDetailDto CreateCustomerDetailDto()
+        {
+            return Fixture.Build<CustomerDetailDto>()
+                .Create();
+        }
+
+        public static CustomerDetailDto CreateCustomerDetailDtoWithoutOrders()
+        {
+            return Fixture.Build<CustomerDetailDto>()
+                .With(x => x.Orders, new List<OrderDetailDto>())
                 .Create();
         }
 
