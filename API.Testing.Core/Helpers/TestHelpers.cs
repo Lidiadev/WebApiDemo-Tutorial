@@ -1,5 +1,6 @@
 ﻿namespace API.Testing.Core.Helpers
 {
+    using API.Core.Dtos.Customer;
     using API.Core.Entities;
     using EntityFramework;
     using Ploeh.AutoFixture;
@@ -38,6 +39,13 @@
             }
 
             return customersSet;
+        }
+
+        public static IList<CustomerDto> CreateCustomerDtos(int number = 10)
+        {
+            return Fixture.Build<CustomerDto>()
+               .CreateMany(number)
+               .ToList();
         }
     }
 }
