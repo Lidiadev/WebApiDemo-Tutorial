@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer\CustomerReadService.cs" />
+    <Compile Include="Interfaces\ICustomerReadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API.Core\API.Core.csproj">
+      <Project>{FD2B8418-237D-446C-B440-B9DB183CED63}</Project>
+      <Name>API.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API.Data\API.Data.csproj">
+      <Project>{66498558-CD58-44C5-AD9B-5665DF3C526C}</Project>
+      <Name>API.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

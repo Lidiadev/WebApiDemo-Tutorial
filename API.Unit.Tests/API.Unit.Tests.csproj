@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CustomerRepositoryTests.cs" />
+    <Compile Include="Services\CustomerReadServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -98,6 +99,10 @@
     <ProjectReference Include="..\API.Data\API.Data.csproj">
       <Project>{66498558-CD58-44C5-AD9B-5665DF3C526C}</Project>
       <Name>API.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API.Services\API.Services.csproj">
+      <Project>{E0C77A75-E97C-40FF-A189-18E1B8F16419}</Project>
+      <Name>API.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\API.Testing.Core\API.Testing.Core.csproj">
       <Project>{3444b5c3-786c-4d87-848f-e834e15fdb65}</Project>

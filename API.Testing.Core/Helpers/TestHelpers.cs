@@ -16,6 +16,14 @@
             Fixture.Behaviors.Add(new OmitOnRecursionBehavior());
         }
 
+        public static IList<Customer> CreateCustomers(int number = 10)
+        {
+            return Fixture.Build<Customer>()
+               .Without(x => x.Orders)
+               .CreateMany(number)
+               .ToList();
+        }
+
         public static FakeDbSet<Customer> CreateFakeCustomers(int number = 10)
         {
             FakeDbSet<Customer> customersSet = new FakeDbSet<Customer>();
